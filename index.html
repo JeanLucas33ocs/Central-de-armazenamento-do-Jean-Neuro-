@@ -1,16 +1,285 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OCS</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #f2f2f2;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+    }
+    h1 {
+      color: #f26;
+      font-size: 28px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border-bottom: 1px solid #444;
+      padding: 8px;
+      text-align: left;
+    }
+    a {
+      color: #66f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <h1>Bem-vindo(a) ao centro de "armazenamento" do Jean (neuro)</h1>
+  <table id="tabela">
+    <tr><th>Nome</th></tr>
+  </table>
 
+  <script>
+    fetch('arquivos.json')
+      .then(res => res.json())
+      .then(dados => {
+        const tabela = document.getElementById('tabela');
+        dados.forEach(item => {
+          const linha = document.createElement('tr');
+          linha.innerHTML = `
+            <td><a href="${item.arquivo}" download>${item.nome}</a></td
+          `;
+          tabela.appendChild(linha);
+        });
+      });
+  </script>
+</body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Música</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    audio {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+          <meta charset="UTF-8">
+          <title>Ouça e Baixe</title>
+          <style>
+            body {
+              background-color: #121212;
+              color: #eee;
+              font-family: Arial, sans-serif;
+              padding: 40px;
+            }
+            .musica {
+              margin-bottom: 30px;
+              border-bottom: 1px solid #444;
+              padding-bottom: 10px;
+            }
+            button {
+              background-color: #1db954;
+              color: white;
+              border: none;
+              padding: 8px 15px;
+              font-size: 14px;
+              border-radius: 6px;
+              cursor: pointer;
+              margin-left: 15px;
+            }
+            audio {
+              display: none;
+              margin-top: 10px;
+            }
+          </style>
+        </head>
+        <body>
+
+          <h1>Lista de Músicas</h1>
+
+          <div class="musica">
+            <span>01 - O sol</span>
+            <button onclick="tocar('audio1')">▶️ Ouvir</button>
+            <audio id="audio1" controls>
+              <source src="O sol.mp3" type="audio/mpeg">
+              Seu navegador não aguenta o áudio não filhote.
+            </audio>
+          </div>
+
+          <div class="musica">
+            <span>02 - Reflections</span>
+            <button onclick="tocar('audio2')">▶️ Ouvir</button>
+            <audio id="audio2" controls>
+              <source src="Reflections.mp3" type="audio/mpeg">
+              Seu navegador não aguenta áudio não filhote.
+            </audio>
+          </div>
+          
+          <div class="musica">
+            <span>03 - Full Moon(RJ Pasin)</span>
+            <button onclick="tocar('audio3')">▶️ Ouvir</button>
+            <audio id="audio3" controls>
+              <source src="Full Moon.mp3" type="audio/mpeg">
+              Seu navegador não aguenta o áudio não filhote.
+            </audio>
+
+            <div class="musica">
+              <span>04 - Die With A Smile</span>
+              <button onclick="tocar('audio4')">▶️ Ouvir</button>
+              <audio id="audio4" controls>
+                <source src="Die With A Smile (Metal Version).mp3" type="audio/mpeg">
+                Seu navegador não aguenta o áudio não filhote.
+              </audio>
+
+              <div class="musica">
+                <span>05 - Prequel(Falling in Reverse)</span>
+                <button onclick="tocar('audio5')">▶️ Ouvir</button>
+                <audio id="audio5" controls>
+                  <source src="Falling In Reverse - Prequel.mp3" type="audio/mpeg">
+                  Seu navegador não aguenta o áudio não filhote.
+                </audio>
+
+                <div class="musica">
+                  <span>06 - Ronald(Falling in Reverse)</span>
+                  <button onclick="tocar('audio6')">▶️ Ouvir</button>
+                  <audio id="audio6" controls>
+                    <source src="Falling In Reverse - Ronald.mp3" type="audio/mpeg">
+                    Seu navegador não aguenta o áudio não filhote.
+                  </audio>
+
+                  <div class="musica">
+                    <span>07 - Voices In My Head(Falling in Reverse)</span>
+                    <button onclick="tocar('audio7')">▶️ Ouvir</button>
+                    <audio id="audio7" controls>
+                      <source src="Falling In Reverse - Voices In My Head.mp3" type="audio/mpeg">
+                      Seu navegador não aguenta o áudio não filhote.
+                    </audio>
+
+                    <div class="musica">
+                      <span>08 - Watch The World Burn(Falling in Reverse)</span>
+                      <button onclick="tocar('audio8')">▶️ Ouvir</button>
+                      <audio id="audio8" controls>
+                        <source src="Falling In Reverse - Watch The World Burn.mp3" type="audio/mpeg">
+                        Seu navegador não aguenta o áudio não filhote.
+                      </audio>
+
+                      <div class="musica">
+                        <span>09 - Até que durou(Pericles rock cover)</span>
+                        <button onclick="tocar('audio9')">▶️ Ouvir</button>
+                        <audio id="audio9" controls>
+                          <source src="ATÉ QUE DUROU - Pericles Rock cover.mp3" type="audio/mpeg">
+                          Seu navegador não aguenta o áudio não filhote.
+                        </audio>
+
+                        <div class="musica">
+                          <span>10 - Darkness Before The Dawn(Caleb Hyles)</span>
+                          <button onclick="tocar('audio10')">▶️ Ouvir</button>
+                          <audio id="audio10" controls>
+                            <source src="Darkness Before The Dawn.mp3" type="audio/mpeg">
+                            Seu navegador não aguenta o áudio não filhote.
+                          </audio>
+
+                          <div class="musica">
+                            <span>11 - In The Air Tonight (ROCK Cover by STATE of MINE) </span>
+                            <button onclick="tocar('audio11')">▶️ Ouvir</button>
+                            <audio id="audio11" controls>
+                              <source src="In The Air Tonight (ROCK Cover by STATE of MINE).mp3"
+                                type="audio/mpeg">
+                              Seu navegador não aguenta o áudio não filhote.
+                            </audio>
+                          
+                            <div class="musica">
+                              <span>12 - PAPA ROACH - LAST RESORT </span>
+                              <button onclick="tocar('audio12')">▶️ Ouvir</button>
+                              <audio id="audio12" controls>
+                                <source src="PAPA ROACH - LAST RESORT.mp3"
+                                  type="audio/mpeg">
+                                Seu navegador não aguenta o áudio não filhote.
+                              </audio>
+
+                              <div class="musica">
+                                <span>13 - Playing god in metal style - Polyphia </span>
+                                <button onclick="tocar('audio13')">▶️ Ouvir</button>
+                                <audio id="audio13" controls>
+                                  <source src="POLYPHIA - Tocando God em Estilo Metal.mp4"
+                                    type="audio/mpeg">
+                                  Seu navegador não aguenta o áudio não filhote.
+                                </audio>
+
+                                <div class="musica">
+                                  <span>14 - The Truth - Tristam </span>
+                                  <button onclick="tocar('audio14')">▶️ Ouvir</button>
+                                  <audio id="audio14" controls>
+                                    <source src="TazerCraft intro.mp3"
+                                      type="audio/mpeg">
+                                    Seu navegador não aguenta o áudio não filhote.
+                                  </audio>
+
+                                  <div class="musica">
+                                    <span>15 - Asgore's Theme (Undertale cover by Caleb Hyles,RichaadEb) </span>
+                                    <button onclick="tocar('audio15')">▶️ Ouvir</button>
+                                    <audio id="audio15" controls>
+                                      <source src="Undertale - Asgore's Theme [METAL Ver.] - Caleb Hyles (feat. RichaadEb).mp3"
+                                        type="audio/mpeg">
+                                      Seu navegador não aguenta o áudio não filhote.
+                                    </audio>
+
+                                    <div class="musica">
+                                      <span>16 - Se não fosse tão tarde (cover) </span>
+                                      <button onclick="tocar('audio16')">▶️ Ouvir</button>
+                                      <audio id="audio16" controls>
+                                        <source src="Saudades cover.mp3"
+                                          type="audio/mpeg">
+                                        Seu navegador não aguenta o áudio não filhote.
+                                      </audio>
+                                  
+                                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            function tocar(id) {
+              const audio = document.getElementById(id);
+              if (audio.style.display !== 'block') {
+                audio.style.display = 'block';
+                audio.play();
+              } else {
+                // Se já estiver visível, apenas reinicia o som
+                audio.currentTime = 0;
+                audio.play();
+              }
+            }
+          </script>
+
+                        <h1>Se veio pelos jogos piratas só procurar oque for .zip</h1>
+        </body>
+        </html>
